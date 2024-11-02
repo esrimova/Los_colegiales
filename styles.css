@@ -1,0 +1,105 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    padding: 2rem;
+    background-color: #25E2CC;
+    color: white;
+    text-align: center;
+}
+
+.images-section {
+    padding: 2rem;
+    color: black;
+    text-align: center;
+}
+
+.hero .cta-button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.register-form {
+    padding: 2rem;
+    background-color: #fff;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+footer .social-media a {
+    color: white;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.testimonials {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.testimonial {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-style: italic;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}

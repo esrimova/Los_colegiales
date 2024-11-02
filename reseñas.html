@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas de Clientes - Uniformes Los Colegiales</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Función para agregar una nueva reseña al final de la lista
+        function agregarReseña() {
+            let nombre = document.getElementById("nombre").value;
+            let comentario = document.getElementById("comentario").value;
+            let calificacion = document.getElementById("calificacion").value;
+
+            // Validar que todos los campos estén llenos
+            if (nombre === "" || comentario === "" || calificacion === "") {
+                alert("Por favor, complete todos los campos.");
+                return;
+            }
+
+            // Crear un nuevo elemento para la reseña
+            let nuevaReseña = document.createElement("div");
+            nuevaReseña.classList.add("testimonial");
+
+            // Crear el contenido de la reseña
+            nuevaReseña.innerHTML = `
+                <p>"${comentario}"</p>
+                <span>- ${nombre}, calificación: ${calificacion} estrellas</span>
+            `;
+
+            // Añadir la nueva reseña al contenedor de reseñas
+            document.getElementById("reseñasContainer").appendChild(nuevaReseña);
+
+            // Limpiar los campos del formulario
+            document.getElementById("nombre").value = "";
+            document.getElementById("comentario").value = "";
+            document.getElementById("calificacion").value = "";
+        }
+
+        // Función para filtrar reseñas según el texto ingresado en el cuadro de búsqueda
+        function filtrarReseñas() {
+            let input = document.getElementById("buscarReseñas").value.toLowerCase();
+            let reseñas = document.getElementsByClassName("testimonial");
+
+            for (let i = 0; i < reseñas.length; i++) {
+                let texto = reseñas[i].textContent || reseñas[i].innerText;
+                if (texto.toLowerCase().indexOf(input) > -1) {
+                    reseñas[i].style.display = "";
+                } else {
+                    reseñas[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Reseñas de Clientes</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="reseñas.html">Reseñas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Barra de búsqueda para filtrar reseñas -->
+    <section>
+        <input type="text" id="buscarReseñas" onkeyup="filtrarReseñas()" placeholder="Buscar reseñas...">
+    </section>
+
+    <!-- Sección que muestra las reseñas existentes -->
+    <section class="testimonials" id="reseñasContainer">
+        <h2>Lo que nuestros clientes dicen</h2>
+
+        <div class="testimonial">
+            <p>"Los uniformes son de excelente calidad. Los materiales son duraderos y cómodos. Definitivamente recomendados."</p>
+            <span>- Laura Gómez, madre de familia</span>
+        </div>
+
+        <div class="testimonial">
+            <p>"Hemos trabajado con Uniformes Los Colegiales por más de cinco años y siempre hemos recibido un servicio impecable. ¡Gracias por mantener el estándar tan alto!"</p>
+            <span>- Roberto Martínez, director de escuela</span>
+        </div>
+
+        <div class="testimonial">
+            <p>"El proceso de personalización fue sencillo y los uniformes llegaron justo a tiempo. Todos nuestros estudiantes están encantados con el diseño."</p>
+            <span>- Andrea Pérez, coordinadora escolar</span>
+        </div>
+
+        <div class="testimonial">
+            <p>"La atención al cliente es maravillosa, siempre dispuestos a resolver cualquier duda o inconveniente. ¡Muy satisfechos con la compra!"</p>
+            <span>- Juan Rodríguez, padre de familia</span>
+        </div>
+    </section>
+
+    <!-- Formulario para agregar nuevas reseñas -->
+    <section class="add-review">
+        <h2>Añadir una reseña</h2>
+        <form onsubmit="event.preventDefault(); agregarReseña();">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            
+            <label for="comentario">Comentario:</label>
+            <textarea id="comentario" rows="4" required></textarea>
+
+            <label for="calificacion">Calificación (1-5):</label>
+            <input type="number" id="calificacion" min="1" max="5" required>
+
+            <button type="submit">Enviar Reseña</button>
+        </form>
+    </section>
+<br>
+<br>
+    <footer>
+        <p>Contacto: contacto@loscolegiales.com | Teléfono: +57 123 456789</p>
+        <div class="social-media">
+            <a href="https://www.Facebook.com">Facebook</a> | <a href="https://www.twitter.com">X</a> | <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

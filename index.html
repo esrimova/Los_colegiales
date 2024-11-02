@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio - Plataforma de Gestión</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Función que guarda el nombre del usuario en localStorage y muestra un saludo
+        function saludarUsuario() {
+            let usuario = localStorage.getItem("nombreUsuario");
+            if (usuario) {
+                document.getElementById("saludo").textContent = "¡Bienvenido de nuevo, " + usuario + "!";
+            }
+        }
+        
+        // Evento que se ejecuta cuando la página termina de cargar
+        window.onload = saludarUsuario;
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Uniformes Los Colegiales</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="reseñas.html">Reseñas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2 id="saludo">Bienvenido a nuestro catálogo en línea</h2>
+        <p>Aquí podrás registrarte en nuestro sistema.</p>
+        <a href="registro.html" class="cta-button">Comenzar Ahora</a>
+    </section>
+
+    <section class="images-section">
+        <h3>Nuestros Productos Destacados</h3>
+        <img src="imagen01.jpg" alt="Imagen de producto 1" width="400">
+        <img src="imagen02.jpg" alt="Imagen de producto 2" width="400">
+    </section>
+<br>
+<br>
+    <footer>
+        <p>Contacto: contacto@loscolegiales.com | Teléfono: +57 123 456789</p>
+        <div class="social-media">
+            <a href="https://www.Facebook.com">Facebook</a> | <a href="https://www.twitter.com">X</a> | <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
