@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    padding: 2rem;
+    background-color: #25E2CC;
+    color: white;
+    text-align: center;
+}
+
+.hero .cta-button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.images-section {
+    padding: 2rem;
+    color: black;
+    text-align: center;
+}
+
+.register-form {
+    padding: 2rem;
+    background-color: #fff;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.services {
+    padding: 2rem;
+    padding-bottom: 100px; /* Espacio adicional para evitar superposición con el footer */
+    flex: 1; /* Permite que la sección ocupe el espacio restante */
+    min-height: calc(100vh - 200px); /* Asegura que ocupe al menos el espacio completo de la pantalla */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: relative; /* Mantiene el footer en la parte inferior del contenido */
+}
+
+footer .social-media a {
+    color: white;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.testimonials {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.testimonial {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-style: italic;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.add-to-cart {
+    background-color: #003366; /* Azul oscuro */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px; /* Tamaño de fuente aumentado */
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart i {
+    font-size: 22px; /* Tamaño del ícono */
+}
+
+.add-to-cart:hover {
+    background-color: #002244; /* Azul más oscuro para hover */
+    transform: scale(1.05); /* Efecto al pasar el mouse */
+}
+
+/* Botón flotante */
+#btnScrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #003366; /* Azul oscuro */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none; /* Inicialmente oculto */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#btnScrollToTop i {
+    font-size: 20px;
+}
+
+#btnScrollToTop:hover {
+    background-color: #002244; /* Azul más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Efecto de zoom */
+}

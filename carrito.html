@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos para el carrito */
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .cart-item h4 {
+            margin: 0;
+        }
+        .remove-button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .remove-button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Carrito de Compras</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="reseñas.html">Reseñas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cart-container">
+        <h2>Tu Carrito</h2>
+        <div id="cart-items">
+            <!-- Los productos añadidos aparecerán aquí -->
+        </div>
+        <button onclick="vaciarCarrito()" class="remove-button">Vaciar Carrito</button>
+    </div>
+
+    <footer>
+        <p>Contacto: contacto@loscolegiales.com | Teléfono: +57 123 456789</p>
+        <div class="social-media">
+            <a href="https://www.Facebook.com">Facebook</a> | <a href="https://www.twitter.com">X</a> | <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Cargar los productos desde localStorage y mostrarlos
+        function cargarCarrito() {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            let cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = ''; // Limpiar contenido existente
+
+            if (carrito.length === 0) {
+                cartItems.innerHTML = '<p>El carrito está vacío.</p>';
+                return;
+            }
+
+            carrito.forEach((producto, index) => {
+                let div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `
+                    <h4>${producto}</h4>
+                    <button class="remove-button" onclick="eliminarProducto(${index})">
+                        Eliminar
+                    </button>
+                `;
+                cartItems.appendChild(div);
+            });
+        }
+
+        // Eliminar un producto específico
+        function eliminarProducto(index) {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.splice(index, 1); // Eliminar producto del array
+            localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar localStorage
+            cargarCarrito(); // Actualizar la vista
+        }
+
+        // Vaciar todo el carrito
+        function vaciarCarrito() {
+            localStorage.removeItem('carrito'); // Eliminar carrito del localStorage
+            cargarCarrito(); // Actualizar la vista
+        }
+
+        // Cargar el carrito al iniciar la página
+        window.onload = cargarCarrito;
+    </script>
+</body>
+</html>

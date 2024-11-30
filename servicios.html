@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Venta de Uniformes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        // Función para filtrar los servicios
+        function filtrarServicios() {
+            let input = document.getElementById("buscar").value.toLowerCase();
+            let tipoUniforme = document.getElementById("tipoUniforme").value;
+            let color = document.getElementById("color").value;
+            let items = document.getElementsByClassName("servicio");
+    
+            // Iterar sobre los servicios y mostrar solo los que coincidan con la búsqueda y filtros
+            for (let i = 0; i < items.length; i++) {
+                let item = items[i];
+                let texto = item.textContent.toLowerCase();
+                let tipo = item.getAttribute("data-tipo");
+                let colorProducto = item.getAttribute("data-color");
+    
+                // Condición para mostrar solo los elementos que coincidan con todos los filtros
+                if (
+                    (texto.indexOf(input) > -1 || input === "") &&
+                    (tipoUniforme === "" || tipoUniforme === tipo) &&
+                    (color === "" || color === colorProducto)
+                ) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Venta de Uniformes</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="reseñas.html">Reseñas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+ <!-- Filtros avanzados -->
+<div class="advanced-filters">
+    <label for="tipoUniforme">Tipo de Uniforme:</label>
+    <select id="tipoUniforme" onchange="filtrarServicios()">
+        <option value="">Todos</option>
+        <option value="escolar">Escolar</option>
+        <option value="deportivo">Deportivo</option>
+        <option value="personalizado">Personalizado</option>
+    </select>
+
+    <label for="color">Color:</label>
+    <select id="color" onchange="filtrarServicios()">
+        <option value="">Todos</option>
+        <option value="azul">Azul</option>
+        <option value="blanco">Blanco</option>
+        <option value="rojo">Rojo</option>
+    </select>
+</div>
+
+<!-- Campo de búsqueda de texto -->
+<input type="text" id="buscar" onkeyup="filtrarServicios()" placeholder="Buscar servicios...">
+
+<!-- Listado de servicios con enlaces y atributos de datos -->
+<ul>
+    <li class="servicio" data-tipo="escolar" data-color="azul"><a href="#producto1">Uniforme escolar básico (Azul)</a></li>
+    <li class="servicio" data-tipo="deportivo" data-color="blanco"><a href="#producto2">Uniforme deportivo (Blanco)</a></li>
+    <li class="servicio" data-tipo="personalizado" data-color="rojo"><a href="#producto3">Uniforme personalizado (Rojo)</a></li>
+    <li class="servicio" data-tipo="escolar" data-color="azul"><a href="#producto4">Uniforme escolar avanzado (Azul)</a></li>
+    <li class="servicio" data-tipo="deportivo" data-color="blanco"><a href="#producto5">Uniforme deportivo profesional (Blanco)</a></li>
+    <li class="servicio" data-tipo="personalizado" data-color="rojo"><a href="#producto6">Uniforme personalizado deluxe (Rojo)</a></li>
+    <li class="servicio" data-tipo="escolar" data-color="azul"><a href="#producto7">Uniforme escolar con logo (Azul)</a></li>
+    <li class="servicio" data-tipo="deportivo" data-color="blanco"><a href="#producto8">Uniforme deportivo de alto rendimiento (Blanco)</a></li>
+    <li class="servicio" data-tipo="personalizado" data-color="rojo"><a href="#producto9">Uniforme personalizado edición limitada (Rojo)</a></li>
+    <li class="servicio" data-tipo="escolar" data-color="azul"><a href="#producto10">Uniforme escolar premium (Azul)</a></li>
+    <li class="servicio" data-tipo="deportivo" data-color="blanco"><a href="#producto11">Uniforme deportivo juvenil (Blanco)</a></li>
+    <li class="servicio" data-tipo="personalizado" data-color="rojo"><a href="#producto12">Uniforme personalizado infantil (Rojo)</a></li>
+    <li class="servicio" data-tipo="escolar" data-color="azul"><a href="#producto13">Uniforme escolar ecológico (Azul)</a></li>
+    <li class="servicio" data-tipo="deportivo" data-color="blanco"><a href="#producto14">Uniforme deportivo ecológico (Blanco)</a></li>
+    <li class="servicio" data-tipo="personalizado" data-color="rojo"><a href="#producto15">Uniforme personalizado ecológico (Rojo)</a></li>
+    <li class="servicio" data-tipo="escolar" data-color="azul"><a href="#producto16">Uniforme escolar clásico (Azul)</a></li>
+    <li class="servicio" data-tipo="deportivo" data-color="blanco"><a href="#producto17">Uniforme deportivo clásico (Blanco)</a></li>
+    <li class="servicio" data-tipo="personalizado" data-color="rojo"><a href="#producto18">Uniforme personalizado clásico (Rojo)</a></li>
+    <li class="servicio" data-tipo="escolar" data-color="azul"><a href="#producto19">Uniforme escolar con emblema (Azul)</a></li>
+    <li class="servicio" data-tipo="deportivo" data-color="blanco"><a href="#producto20">Uniforme deportivo premium (Blanco)</a></li>
+    <li class="servicio" data-tipo="personalizado" data-color="rojo"><a href="#producto21">Uniforme personalizado premium (Rojo)</a></li>
+    <li class="servicio" data-tipo="escolar" data-color="azul"><a href="#producto22">Uniforme escolar económico (Azul)</a></li>
+    <li class="servicio" data-tipo="deportivo" data-color="blanco"><a href="#producto23">Uniforme deportivo económico (Blanco)</a></li>
+    <li class="servicio" data-tipo="personalizado" data-color="rojo"><a href="#producto24">Uniforme personalizado económico (Rojo)</a></li>
+    <li class="servicio" data-tipo="escolar" data-color="azul"><a href="#producto25">Uniforme escolar con distintivo (Azul)</a></li>
+</ul>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    
+    <section class="products-detail">
+        <h3>Detalles de Productos</h3>
+
+        <br>
+        <br>
+    
+        <div id="producto1" class="product-item">
+            <h4>Uniforme escolar básico (Azul)</h4>
+            <img src="Galeria/CAzul01.jpg" alt="Uniforme escolar básico (Azul)">
+            <p>Este uniforme escolar básico es ideal para estudiantes de primaria y secundaria. Está confeccionado con materiales duraderos y cómodos que soportan el desgaste diario.</p>
+            <button onclick="añadirAlCarrito('Uniforme escolar básico (Azul)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto2" class="product-item">
+            <h4>Uniforme deportivo (Blanco)</h4>
+            <img src="Galeria/CLila01.jpg" alt="Uniforme deportivo (Blanco)">
+            <p>Uniforme deportivo diseñado para actividades físicas. Fabricado con tela transpirable que permite la circulación del aire.</p>
+            <button onclick="añadirAlCarrito('Uniforme deportivo (Blanco)')" class="add-to-cart">
+            Añadir al carrito <i class="fas fa-shopping-cart"></i>
+        </button>
+        </div>
+        <hr>
+        <br>
+
+        <div id="producto3" class="product-item">
+            <h4>Uniforme personalizado (Rojo)</h4>
+            <img src="Galeria/CRojo01.jpg" alt="Uniforme personalizado (Rojo)">
+            <p>Uniforme personalizado ideal para instituciones que buscan un diseño único. Se puede personalizar con el logotipo del colegio.</p>
+                <button onclick="añadirAlCarrito('Uniforme personalizado (Rojo)')" class="add-to-cart">
+            Añadir al carrito <i class="fas fa-shopping-cart"></i>
+        </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto4" class="product-item">
+            <h4>Uniforme escolar avanzado (Azul)</h4>
+            <img src="Galeria/CAzul01.jpg" alt="Uniforme escolar avanzado (Azul)">
+            <p>Este uniforme escolar avanzado está diseñado con materiales de alta calidad que proporcionan mayor resistencia y comodidad.</p>
+            <button onclick="añadirAlCarrito('Uniforme escolar avanzado (Azul)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto5" class="product-item">
+            <h4>Uniforme deportivo profesional (Blanco)</h4>
+            <img src="Galeria/CLila01.jpg" alt="Uniforme deportivo profesional (Blanco)">
+            <p>Uniforme profesional para deportes, ideal para actividades de alta intensidad. Hecho con tela de secado rápido y antiolores.</p>
+            <button onclick="añadirAlCarrito('Uniforme deportivo profesional (Blanco)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto6" class="product-item">
+            <h4>Uniforme personalizado deluxe (Rojo)</h4>
+            <img src="Galeria/CRojo02.jpg" alt="Uniforme personalizado deluxe (Rojo)">
+            <p>Uniforme de alta gama personalizado, adecuado para eventos especiales y ceremonias. Incluye bordados y acabados premium.</p>
+            <button onclick="añadirAlCarrito('Uniforme personalizado deluxe (Rojo)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto7" class="product-item">
+            <h4>Uniforme escolar con logo (Azul)</h4>
+            <img src="Galeria/CAzul01.jpg" alt="Uniforme escolar con logo (Azul)">
+            <p>Uniforme escolar con opción de bordado del logo de la institución. Hecho de materiales cómodos y resistentes.</p>
+            <button onclick="añadirAlCarrito('Uniforme escolar con logo (Azul)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto8" class="product-item">
+            <h4>Uniforme deportivo de alto rendimiento (Blanco)</h4>
+            <img src="Galeria/CLila01.jpg" alt="Uniforme deportivo de alto rendimiento (Blanco)">
+            <p>Uniforme diseñado para deportistas de alto rendimiento. Su tejido ligero facilita el movimiento y la transpiración.</p>
+            <button onclick="añadirAlCarrito('Uniforme deportivo de alto rendimiento (Blanco)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto9" class="product-item">
+            <h4>Uniforme personalizado edición limitada (Rojo)</h4>
+            <img src="Galeria/CRojo01.jpg" alt="Uniforme personalizado edición limitada (Rojo)">
+            <p>Uniforme exclusivo en edición limitada, ideal para celebraciones y eventos institucionales.</p>
+            <button onclick="añadirAlCarrito('Uniforme personalizado edición limitada (Rojo)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto10" class="product-item">
+            <h4>Uniforme escolar premium (Azul)</h4>
+            <img src="Galeria/Cpremium01.jpg" alt="Uniforme escolar premium (Azul)">
+            <p>Uniforme escolar premium hecho con telas de alta calidad y diseño elegante para una apariencia profesional.</p>
+            <button onclick="añadirAlCarrito('Uniforme escolar premium (Azul)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto11" class="product-item">
+            <h4>Uniforme deportivo juvenil (Blanco)</h4>
+            <img src="Galeria/CLila01.jpg" alt="Uniforme deportivo juvenil (Blanco)">
+            <p>Uniforme deportivo especialmente diseñado para jóvenes. Disponible en varias tallas y colores modernos.</p>
+            <button onclick="añadirAlCarrito('Uniforme deportivo juvenil (Blanco)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto12" class="product-item">
+            <h4>Uniforme personalizado infantil (Rojo)</h4>
+            <img src="Galeria/CVinotinto01.jpg" alt="Uniforme personalizado infantil (Rojo)">
+            <p>Uniforme infantil personalizado, ideal para actividades escolares y eventos especiales para niños.</p>
+            <button onclick="añadirAlCarrito('Uniforme personalizado infantil (Rojo)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+        
+        <div id="producto13" class="product-item">
+            <h4>Uniforme escolar ecológico (Azul)</h4>
+            <img src="Galeria/CAzul01.jpg" alt="Uniforme escolar ecológico (Azul)">
+            <p>Uniforme escolar hecho con materiales ecológicos, promoviendo la sostenibilidad en la educación.</p>
+            <button onclick="añadirAlCarrito('Uniforme escolar ecológico (Azul)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto14" class="product-item">
+            <h4>Uniforme deportivo ecológico (Blanco)</h4>
+            <img src="Galeria/CLila01.jpg" alt="Uniforme deportivo ecológico (Blanco)">
+            <p>Uniforme deportivo ecológico hecho con materiales reciclados, ideal para actividades al aire libre.</p>
+            <button onclick="añadirAlCarrito('Uniforme deportivo ecológico (Blanco)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto15" class="product-item">
+            <h4>Uniforme personalizado ecológico (Rojo)</h4>
+            <img src="Galeria/CRojo01.jpg" alt="Uniforme personalizado ecológico (Rojo)">
+            <p>Uniforme personalizado ecológico, adecuado para instituciones que promueven el cuidado del ambiente.</p>
+            <button onclick="añadirAlCarrito('Uniforme personalizado ecológico (Rojo)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto16" class="product-item">
+            <h4>Uniforme escolar clásico (Azul)</h4>
+            <img src="Galeria/CLila01.jpg" alt="Uniforme escolar clásico (Azul)">
+            <p>Uniforme escolar de diseño clásico, perfecto para instituciones que prefieren un estilo tradicional.</p>
+            <button onclick="añadirAlCarrito('Uniforme escolar clásico (Azul)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto17" class="product-item">
+            <h4>Uniforme deportivo clásico (Blanco)</h4>
+            <img src="Galeria/CLila01.jpg" alt="Uniforme deportivo clásico (Blanco)">
+            <p>Uniforme deportivo clásico, ideal para actividades físicas regulares y uso diario.</p>
+            <button onclick="añadirAlCarrito('Uniforme deportivo clásico (Blanco)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto18" class="product-item">
+            <h4>Uniforme personalizado clásico (Rojo)</h4>
+            <img src="Galeria/CRojo02.jpg" alt="Uniforme personalizado clásico (Rojo)">
+            <p>Uniforme personalizado con diseño clásico, ideal para eventos formales y reuniones institucionales.</p>
+            <button onclick="añadirAlCarrito('Uniforme personalizado clásico (Rojo)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto19" class="product-item">
+            <h4>Uniforme escolar con emblema (Azul)</h4>
+            <img src="Galeria/CAzul01.jpg" alt="Uniforme escolar con emblema (Azul)">
+            <p>Uniforme escolar que incluye el emblema de la institución, destacando la identidad del colegio.</p>
+            <button onclick="añadirAlCarrito('Uniforme escolar con emblema (Azul)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto20" class="product-item">
+            <h4>Uniforme deportivo premium (Blanco)</h4>
+            <img src="Galeria/CLila01.jpg" alt="Uniforme deportivo premium (Blanco)">
+            <p>Uniforme deportivo premium diseñado para mayor comodidad y rendimiento en deportes competitivos.</p>
+            <button onclick="añadirAlCarrito('Uniforme deportivo premium (Blanco)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto21" class="product-item">
+            <h4>Uniforme personalizado premium (Rojo)</h4>
+            <img src="Galeria/CVinotinto01.jpg" alt="Uniforme personalizado premium (Rojo)">
+            <p>Uniforme personalizado premium con materiales de alta calidad y acabado de lujo.</p>
+            <button onclick="añadirAlCarrito('Uniforme personalizado premium (Rojo)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto22" class="product-item">
+            <h4>Uniforme escolar económico (Azul)</h4>
+            <img src="Galeria/CLila01.jpg" alt="Uniforme escolar económico (Azul)">
+            <p>Uniforme escolar económico que mantiene una excelente relación calidad-precio para uso diario.</p>
+            <button onclick="añadirAlCarrito('Uniforme escolar económico (Azul)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto23" class="product-item">
+            <h4>Uniforme deportivo económico (Blanco)</h4>
+            <img src="Galeria/CLila01.jpg" alt="Uniforme deportivo económico (Blanco)">
+            <p>Uniforme deportivo económico ideal para estudiantes, ofreciendo comodidad sin altos costos.</p>
+            <button onclick="añadirAlCarrito('Uniforme deportivo económico (Blanco)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto24" class="product-item">
+            <h4>Uniforme personalizado económico (Rojo)</h4>
+            <img src="Galeria/CRojo01.jpg" alt="Uniforme personalizado económico (Rojo)">
+            <p>Uniforme personalizado accesible y de bajo costo, ideal para eventos ocasionales y actividades promocionales.</p>
+            <button onclick="añadirAlCarrito('Uniforme personalizado económico (Rojo)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        <hr>
+        <br>
+    
+        <div id="producto25" class="product-item">
+            <h4>Uniforme escolar con distintivo (Azul)</h4>
+            <img src="Galeria/CAzul01.jpg" alt="Uniforme escolar con distintivo (Azul)">
+            <p>Uniforme escolar con distintivo especial, diseñado para instituciones que desean resaltar su identidad.</p>
+            <button onclick="añadirAlCarrito('Uniforme escolar con distintivo (Azul)')" class="add-to-cart">
+                Añadir al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+    </section>
+    
+    <br>
+    <br>
+    <footer>
+        <p>Contacto: contacto@loscolegiales.com | Teléfono: +57 123 456789</p>
+        <div class="social-media">
+            <a href="https://www.Facebook.com">Facebook</a> | <a href="https://www.twitter.com">X</a> | <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        function añadirAlCarrito(nombreProducto) {
+            // Obtener los productos actuales del carrito desde localStorage
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            
+            // Agregar el nuevo producto al carrito
+            carrito.push(nombreProducto);
+            
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            
+            // Confirmar al usuario que el producto se agregó
+            alert(`${nombreProducto} ha sido añadido al carrito.`);
+        }
+    </script>
+
+    <!-- Botón flotante para regresar al inicio -->
+    <button id="btnScrollToTop" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mostrar el botón cuando se desplaza hacia abajo
+        window.onscroll = function () {
+            const btn = document.getElementById('btnScrollToTop');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
+    
+        // Función para desplazarse hacia la parte superior
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+    </body>
+
+
+</body>
+</html>
